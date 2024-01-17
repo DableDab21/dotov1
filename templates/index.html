@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой Flask проект</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>{{ greeting }}</h1>
+
+<div id="welcome-screen">
+    <h1>Welcome to My ToDo App!</h1>
+</div>
+
+<div id="main-screen" style="display: none;">
+    <h1>To-Do List</h1>
+    <ul id="task-list"></ul>
+    <input type="text" id="new-task" placeholder="Add a new task">
+    <button onclick="addTask()">Add Task</button>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
